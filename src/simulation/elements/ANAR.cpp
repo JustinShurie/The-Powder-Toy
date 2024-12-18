@@ -7,14 +7,7 @@ void Element::Element_ANAR()
 	Identifier = "DEFAULT_PT_ANAR";
 	Name = "ANAR";
 	Colour = 0xFFFFEE_rgb;
-	MenuVisible = 1;
-	MenuSection = SC_POWDERS;
-	Enabled = 1;
-
-	Advection = -0.7f;
-	AirDrag = -0.02f * CFDS;
-	AirLoss = 0.96f;
-	Loss = 0.80f;
+	MenuVisible 
 	Collision = 0.1f;
 	Gravity = -0.1f;
 	NewtonianGravity = -1.f;
