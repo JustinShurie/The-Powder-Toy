@@ -82,7 +82,7 @@ static int update(UPDATE_FUNC_ARGS)
 							sim->kill_part(ID(r));
 						}
 					}
-					else if (rt != PT_CLNE && rt != PT_PCLN && parts[i].life >= 50 && sim->rng.chance(elements[rt].Hardness, 1000))
+					else if (rt != PT_CLNE && rt != PT_PCLN && parts[i].life > 50 && sim->rng.chance(elements[rt].Hardness, 1000))
 					{
 						if (sim->parts_avg(i, ID(r),PT_GLAS)!= PT_GLAS)//GLAS protects stuff from acid
 						{
@@ -122,7 +122,7 @@ static int update(UPDATE_FUNC_ARGS)
 			auto r = pmap[y+ry][x+rx];
 			if (!r)
 				continue;
-			if (TYP(r) == PT_ACID && (parts[i].life > parts[ID(r)].life) && parts[i].life>0)//diffusion
+			if (TYP(r) == PT_ACID && (parts[i].life > parts[ID(r)].life) && parts[i].life>51)//diffusion
 			{
 				int temp = parts[i].life - parts[ID(r)].life;
 				if (temp == 1)
